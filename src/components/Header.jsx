@@ -24,7 +24,7 @@ function Header({ toggleCart }) {
       <div className="flex items-center gap-4">
         <button
           onClick={(e) => {
-            e.stopPropagation();
+            e.stopPropagation(); 
             setIsMenuOpen(!isMenuOpen);
           }}
           className="lg:hidden text-2xl text-gray-700 hover:text-black"
@@ -34,6 +34,7 @@ function Header({ toggleCart }) {
 
         <img src={`${import.meta.env.BASE_URL}images/logo.svg`} alt="Logo" />
 
+        {/* Desktop Navigation */}
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-6 text-gray-600">
             <li className="hover:text-black cursor-pointer">Collection</li>
@@ -57,6 +58,23 @@ function Header({ toggleCart }) {
           />
         </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <nav
+          ref={menuRef}
+          className="absolute top-20 left-0 w-full bg-white shadow-lg p-6 z-50 lg:hidden rounded-lg"
+          onClick={(e) => e.stopPropagation()} 
+        >
+          <ul className="flex flex-col gap-4 text-gray-700 text-center">
+            <li className="hover:text-black cursor-pointer">Collection</li>
+            <li className="hover:text-black cursor-pointer">Men</li>
+            <li className="hover:text-black cursor-pointer">Women</li>
+            <li className="hover:text-black cursor-pointer">About</li>
+            <li className="hover:text-black cursor-pointer">Contact</li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
