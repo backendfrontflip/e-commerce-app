@@ -81,8 +81,8 @@ function App() {
                   <FaPlus />
                 </button>
               </div>
-              <button onClick={addToCart} className="flex items-center bg-orange-500 gap-4 text-black px-6 py-3 rounded-lg hover:bg-orange-600 transition">
-                <FaCartPlus />
+              <button onClick={addToCart} className="flex items-center bg-orange-500 gap-4 text-black font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition">
+                <FaCartPlus className="text-black"/>
                 Add to cart
               </button>
             </div>
