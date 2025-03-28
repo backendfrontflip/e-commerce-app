@@ -12,7 +12,7 @@ const CartedItems = ({ cartItems, setShowCart }) => {
           {cartItems.map((item, index) => (
             <li key={index} className="flex items-center gap-4 border-b pb-2">
               <img
-                src={item.thumbnail}
+                src={`${import.meta.env.BASE_URL}${item.thumbnail}`}
                 alt={`Thumbnail of ${item.name}`}
                 className="w-12 h-12 rounded-lg border border-gray-300"
               />
@@ -29,7 +29,7 @@ const CartedItems = ({ cartItems, setShowCart }) => {
       <div className="flex items-center justify-center">
         <button
           className="border border-b p-2 rounded-full w-full mt-2 bg-orange-500 font-bold"
-          onClick={() => setShowCart(false)} // Hide the cart
+          onClick={() => setShowCart(false)}
         >
           Checkout
         </button>

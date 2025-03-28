@@ -44,13 +44,17 @@ function App() {
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 p-4">
           <article className="flex flex-col items-center">
             {products.length > 0 && (
-              <img src={products[value].mainImage} alt="Main Product" className="mx-auto mt-6 w-72 rounded-lg" />
+              <img 
+                src={`${import.meta.env.BASE_URL}${products[value].mainImage}`} 
+                alt="Main Product" 
+                className="mx-auto mt-6 w-72 rounded-lg" 
+              />
             )}
             <ul className="flex justify-center gap-4 mt-3 flex-wrap">
               {products.map((item, index) => (
                 <li key={item.id} onClick={() => setValue(index)}>
                   <img
-                    src={item.thumbnail}
+                    src={`${import.meta.env.BASE_URL}${item.thumbnail}`}
                     alt={`Thumbnail of ${item.name}`}
                     className="w-16 cursor-pointer hover:opacity-75 border-2 border-transparent hover:border-orange-500 rounded-md"
                   />

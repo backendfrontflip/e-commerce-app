@@ -32,7 +32,7 @@ function Header({ toggleCart }) {
           <FaBars />
         </button>
 
-        <img src="/images/logo.svg" alt="Logo" />
+        <img src={`${import.meta.env.BASE_URL}images/logo.svg`} alt="Logo" />
 
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-6 text-gray-600">
@@ -51,27 +51,12 @@ function Header({ toggleCart }) {
         </button>
         <button>
           <img
-            src="/images/image-avatar.png"
+            src={`${import.meta.env.BASE_URL}images/image-avatar.png`}
             alt="User Avatar"
             className="w-12 rounded-full border-2 border-gray-300 hover:border-black"
           />
         </button>
       </div>
-
-      {isMenuOpen && (
-        <nav
-          ref={menuRef}
-          className="absolute top-20 left-1/2 transform -translate-x-1/2 w-10/12 max-w-xs bg-white shadow-lg p-6 z-50 lg:hidden rounded-lg"
-        >
-          <ul className="flex flex-col gap-4 text-gray-700 text-center">
-            <li className="hover:text-black cursor-pointer">Collection</li>
-            <li className="hover:text-black cursor-pointer">Men</li>
-            <li className="hover:text-black cursor-pointer">Women</li>
-            <li className="hover:text-black cursor-pointer">About</li>
-            <li className="hover:text-black cursor-pointer">Contact</li>
-          </ul>
-        </nav>
-      )}
     </header>
   );
 }
